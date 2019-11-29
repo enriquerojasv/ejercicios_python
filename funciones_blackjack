@@ -1,0 +1,88 @@
+# ====FUNCIONES
+def tirada2():
+    dado_1=random.randint(1,6)
+    dado_2=random.randint(1,6)
+    print("    _ _ _ _                   _ _ _ _            ")  
+    print("   /      /|                 /      /|            ")  
+    print("   ------- |                 ------- |                     ")
+    print(f"  |      | |                |      | |                    ")
+    print(f"  |   {dado_1}  | |                |   {dado_2}  | |                   ")
+    print("   _ _ _ _/                  _ _ _ _/                    ")
+    print()
+    print("Tu tirada ha sido de un {} y un {}.".format(dado_1,dado_2))
+    print()
+    return dado_1+dado_2
+ 
+def tirada1():    
+    dado_1=random.randint(1,6)
+    print("    _ _ _ _             ")  
+    print("   /      /|            ")  
+    print("   ------- |            ")
+    print(f"  |      | |           ")
+    print(f"  |   {dado_1}  | |    ")
+    print("   _ _ _ _/             ")
+    print()
+    print("Tu tirada ha sido de un {}.".format(dado_1))
+    print()
+    return dado_1
+
+def numero_jugadores():
+    numero_jugadores = int(input("Número de jugadores: "))
+    while numero_jugadores<2 or numero_jugadores>7:
+        print ("La cantidad de jugadores en el modo multijugador debe ser entre 2 y 7")
+        numero_jugadores = int(input("Número de jugadores (entre 2 y 7): "))
+    for i in range(numero_jugadores):
+        a=i+1
+        jugador=[]
+        jugador.append(a)
+        jugador.append(input(f"Nombre del {d[a]} jugador: "))
+        jugadores.append(jugador)
+
+def menu_juego():
+    juego = True
+    while juego:
+
+        print()
+        print("       *** BLACKJACK con DADOS ***       ")
+        print("*****************************************")
+        print("*****************************************")
+        print("*                                       *")
+        print("*          1- Solo  vs Casa             *")
+        print("*          2- Multi vs Casa             *")
+        print("*          3- Salir                     *")
+        print("*                                       *")
+        print("*****************************************")
+        print("*****************************************")
+        print()
+
+        opcion = input("Ingresa tu opción: ")
+
+        if opcion != "1" and opcion != "2" and opcion != "3" :
+            print("La opción ingresada es incorrecta. Ingresa\
+                una del menú :)")
+        elif opcion == "" or opcion == " ": 
+            print("La opción ingresada es incorrecta. Ingresa\
+                una del menú :)")
+        else:
+            juego = False
+    return int(opcion)
+
+  
+# =====DICCIONARIOS
+d={
+1:"primer",
+2:"segundo",
+3:"tercer",
+4:"cuarto",
+5:"quinto",
+6:"sexto",
+7:"séptimo"
+}
+
+# =====LISTAS
+jugadores=[]
+
+# =====VARIABLES
+contador = 0
+contadorIA = 0
+findeturno = False
